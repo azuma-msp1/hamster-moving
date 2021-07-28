@@ -54,11 +54,6 @@ img{
 		height: 100px;
 	}
 }
-/* @media screen and (max-width:560px) {
-	.top-img-wrapper{
-		height: 80px;
-	}
-} */
 
 .top-img{
 	width: 200px;
@@ -189,7 +184,7 @@ img{
 	color: #fff;
 	position: absolute;
 	top: 30px; left: 10px;
-	font-size: 0.3rem;
+	font-size: 8px;
 	text-transform: uppercase;
 }
 
@@ -212,7 +207,7 @@ img{
 	color: #fff;
 	position: absolute;
 	top: 30px; left: 9px;
-	font-size: 0.3rem;
+	font-size: 8px;
 	text-transform: uppercase;
 }
 
@@ -419,6 +414,11 @@ h2{
 	text-align: left;
 	margin-left: 15px;
 	font-size: 16px;
+}
+@media screen and (max-width:560px) {
+	.plan-detail{
+		font-size: 14px;
+	}
 }
 .detail-link{
 	width: 100px;
