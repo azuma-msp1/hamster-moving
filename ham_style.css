@@ -54,11 +54,11 @@ img{
 		height: 100px;
 	}
 }
-@media screen and (max-width:560px) {
+/* @media screen and (max-width:560px) {
 	.top-img-wrapper{
 		height: 80px;
 	}
-}
+} */
 
 .top-img{
 	width: 200px;
@@ -82,7 +82,7 @@ img{
 
 .top-text{
 	color: white;
-	font-size: 30px;
+	font-size: calc(16px + 1.4vw);
 	font-weight: bold;
 	margin-top: auto;
 	margin-bottom: auto;
@@ -90,12 +90,12 @@ img{
 }
 @media screen and (max-width:960px) {
 	.top-text{
-		font-size: 20px;
+		font-size: calc(10px + 1.2vw);
 	}
 }
 @media screen and (max-width:560px) {
 	.top-text{
-		font-size: 16px;
+		font-size: 3vw;
 	}
 }
 
@@ -120,10 +120,14 @@ img{
 .header-logo-img{
 	width: 100px;
 }
-
+@media screen and (max-width:960px) {
+	.header-logo-img{
+		width: 10%;
+	}
+}
 .nav-wrap{
 	margin-left: auto;
-	margin-right: 40px;
+	margin-right: 100px;
 }
 @media screen and (max-width:960px) {
 	.nav-wrap{
@@ -143,8 +147,19 @@ img{
 
 
 .openbtn-fixed{
-	position: fixed;top:20px; right:3%;
+	position: absolute;
+	top: 235px;
+	right: 3%;
+	/* position: fixed;top:20px; right:3%; */
 	z-index: 99;
+}
+@media screen and (max-width:960px) {
+	.openbtn-fixed{
+		top:185px;
+	}
+}
+.openbtn-fixed.fixed{
+	position: fixed;top:20px; right:3%;
 }
 .openbtn{ /*ボタン外側*/
 	position: relative;
@@ -212,11 +227,13 @@ h2{
 	font-weight: bold;
 	margin-top: 100px;
 	margin-bottom: 40px;
+	filter: drop-shadow(2px 2px 2px rgba(110, 110, 110, 0.5));
 }
 
 .section-logo{
 	width: 65px;
 	margin-right: 20px;
+	filter: drop-shadow(2px 2px 2px rgba(110, 110, 110, 0.5));
 }
 
 .slider-list{
@@ -249,6 +266,28 @@ h2{
 	margin-left: 10px;
 	margin-right: 10px;
 }
+.slider-item.item01{
+	position: relative;
+}
+.slider-item.item01 > span{
+	position: absolute;
+	color: red;
+}
+.slider-item.item01 > span:nth-of-type(1){
+	top: 25%;
+	left: 5%;
+	font-weight: bold;
+	text-shadow: 0 2px rgb(255, 255, 255);
+	font-size: calc(16px+1.2vw);
+}
+.slider-item.item01 > span:nth-of-type(2){
+	top: 60%;
+	right: 5%;
+	font-weight: bold;
+	text-shadow: 0 2px rgb(255, 255, 255);
+	font-size: calc(20px+1.4vw);
+}
+
 
 .slider-img{
 	/* width: 500px; */
@@ -294,7 +333,7 @@ h2{
 	color: white;
 	margin-left: 30px;
 	margin-right: 30px;
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 .web-btn{
@@ -333,21 +372,64 @@ h2{
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.plan-item{
+	width: 600px;
+	padding: 15px;
+	border: rgb(255, 94, 0) solid 3px;
+	border-radius: 25px;
+	box-shadow:2px 2px 5px rgb(110, 110, 110);
+	display: flex;
+	align-items: flex-start;
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	position: relative;/*孫要素.detail-linkのposition:absoluteに対応*/
+}
+@media screen and (max-width:1400px) {
+	.plan-list{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.plan-item{
+		width: 45%;
+	}
+}
+@media screen and (max-width:960px) {
+	.plan-list{
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.plan-item{
+		width: 100%;
+	}
 }
 
-.plan-item{
-	width: 200px;
-	margin-left: 15px;
-	margin-right: 15px;
-}
 .plan-img{
 	width: 200px;
 }
+.plan-text{
+	color:rgb(255, 94, 0);
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.plan-detail{
+	text-align: left;
+	margin-left: 15px;
+	font-size: 16px;
+}
+.detail-link{
+	width: 100px;
+	position: absolute;/*position:relativeは.plan-detail-wrapper(親要素)ではなく.plan-item(親要素の親要素)に設定*/
+	bottom: 10px;
+	right: 10px;
+}
 
 .corona-wrapper{
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 15%;
+	margin-right: 15%;
 }
 @media screen and (max-width:960px) {
 	.corona-wrapper{
@@ -359,6 +441,7 @@ h2{
 .corona-note{
 	font-weight: bold;
 }
+
 
 /*タブ*/
 .tab{
@@ -374,8 +457,13 @@ h2{
 	margin:0 2px;
 	padding:10px 20px;
 	border: #ddd 1px solid;
-	border-bottom: none;
+	/* border-bottom: none; */
 	width: 200px;
+}
+@media screen and (max-width:960px) {
+	.tab li a{
+		width: 40vw;
+	}
 }
 /*liにactiveクラスがついた時の形状*/
 .tab li.active a{
@@ -397,7 +485,7 @@ h2{
 	animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
-	height: 300px;
+	min-height: 300px;
 	position: relative;
 }
 @keyframes displayAnime{
@@ -406,6 +494,70 @@ h2{
 	}
 	to {
 	opacity: 1;
+	}
+}
+
+.news-list{
+	margin-left: 15%;
+	margin-right: 15%;
+}
+.news-item{
+	display: flex;
+	margin-top: 20px;
+	flex-wrap: wrap;
+}
+
+.date{
+	width: 100px;
+	text-align: left;
+	color: rgb(110, 110, 110);
+}
+
+.news-tag{
+	width: 120px;
+	height: 28px;
+	margin-left: 10px;
+	color: #fff;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 0.8rem;
+	padding-top: 3px;
+}
+
+.infomation-tag{
+	background-color: rgb(0, 110, 255);
+}
+
+.recruit-tag{
+	background-color: rgb(0, 230, 57);
+}
+
+.campaign-tag{
+	background-color: rgb(255, 94, 0);
+}
+
+.company-tag{
+	background-color: rgb(110, 110, 110);
+}
+
+.news-title{
+	margin-left: 10px;
+	text-decoration-line: underline;
+	flex: 1;
+	text-align: left;
+	font-weight: bold;
+}
+
+@media screen and (max-width:960px) {
+	.news-list{
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.news-title{
+		margin-left: 0;
+		width: 100%;
+		flex: none;
+
 	}
 }
 

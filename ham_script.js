@@ -69,3 +69,20 @@ $(window).on('load', function () {
 	var hashName = location.hash; //リンク元の指定されたURLのハッシュタグを取得
 	GethashID (hashName);//設定したタブの読み込み
 });
+
+//MENUボタンの位置
+function menuButton() {
+
+	var scroll = $(window).scrollTop(); //スクロール値を取得
+	if (scroll >= 215){//145pxスクロールしたら
+		$('.openbtn-fixed').addClass('fixed');		// fixedというクラス名を追加
+	}else{//それ以外は
+		if($('.openbtn-fixed').hasClass('fixed')){//fixedというクラス名が既に付与されていたら
+			$('.openbtn-fixed').removeClass('fixed');	//  fixedというクラス名を除去
+		}
+	}
+}
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).scroll(function () {
+	menuButton();/* スクロールした際の動きの関数を呼ぶ*/
+	});
