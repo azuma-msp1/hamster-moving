@@ -183,8 +183,8 @@ img{
 	content: 'menu';
 	color: #fff;
 	position: absolute;
-	top: 30px; left: 10px;
-	font-size: 8px;
+	top: 30px; left: 6px;
+	font-size: 12px;
 	text-transform: uppercase;
 }
 
@@ -206,8 +206,8 @@ img{
 	content: 'close';
 	color: #fff;
 	position: absolute;
-	top: 30px; left: 9px;
-	font-size: 8px;
+	top: 30px; left: 5px;
+	font-size: 12px;
 	text-transform: uppercase;
 }
 
@@ -405,6 +405,12 @@ h2{
 .plan-img{
 	width: 200px;
 }
+@media screen and (max-width:560px) {
+	.plan-img{
+		width: 160px;
+	}
+}
+
 .plan-text{
 	color:rgb(255, 94, 0);
 	font-weight: bold;
